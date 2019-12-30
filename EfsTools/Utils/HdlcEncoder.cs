@@ -28,7 +28,8 @@ namespace EfsTools.Utils
             var crc = Crc16(data);
 
             var buffer = new MemoryStream(data.Length * 2 + HdlcOverheadLength);
-            buffer.WriteByte(HdlcControlChar); // start of frame
+            // This causes issues and all commands return BadCmd
+            //buffer.WriteByte(HdlcControlChar); // start of frame
 
             for (var i = 0; i < data.Length; ++i)
                 if (data[i] == HdlcControlChar || data[i] == HdlcEscChar)

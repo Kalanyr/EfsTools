@@ -11168,6 +11168,8 @@
     <Compile Include="Mbn\McfgHeader.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Qualcomm\HdlcSerial.cs" />
+    <Compile Include="Qualcomm\HdlcSerialRemote.cs" />
     <Compile Include="Qualcomm\QcdmCommands\Attributes\QcdmSubSystemCommandAttribute.cs" />
     <Compile Include="Qualcomm\QcdmCommands\Attributes\QcdmMinResponseLengthAttribute.cs" />
     <Compile Include="Qualcomm\QcdmCommands\Attributes\QcdmCommandAttribute.cs" />
@@ -11258,7 +11260,7 @@
     <Compile Include="Utils\IgnoreAttributeUtils.cs" />
     <Compile Include="Utils\EfsFileAttributeUtils.cs" />
     <Compile Include="Utils\HdlcEncoder.cs" />
-    <Compile Include="Qualcomm\HdlcSerial.cs" />
+    <Compile Include="Qualcomm\HdlcSerialLocal.cs" />
     <Compile Include="Qualcomm\QcdmManagers\QcdmEfsManager.cs" />
     <Compile Include="Qualcomm\QcdmManagers\QcdmCallManager.cs" />
     <Compile Include="Qualcomm\QcdmCommands\IQcdmCommandRequest.cs" />

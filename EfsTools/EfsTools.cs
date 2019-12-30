@@ -353,7 +353,7 @@ namespace EfsTools
 
         private QcdmManager OpenQcdmManager()
         {
-            var manager = new QcdmManager(_config.Port, _config.Baudrate, 5000);
+            var manager = new QcdmManager(_config.Port, _config.Baudrate, 5000, _config.Remote);
             if (_config.Port != manager.PortName)
             {
                 _logger.LogInfo(Strings.QcdmUseComPortFormat, manager.PortName);

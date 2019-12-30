@@ -36,11 +36,18 @@ namespace EfsTools.Qualcomm
         private readonly HdlcSerial _port;
         private bool _doEventReport;
 
-        public QcdmManager(string port, int baudrate, int timeout)
+        public QcdmManager(string port, int baudrate, int timeout, bool remote = false)
         {
             _doEventReport = false;
-            var realPort = GetSerialPort(port);
-            _port = new HdlcSerial(realPort, baudrate, timeout);
+            if (remote)
+            {
+                _port = new HdlcSerialRemote(port, timeout);
+            } else
+            {
+                var realPort = GetSerialPort(port);
+                _port = new HdlcSerialLocal(realPort, baudrate, timeout);
+            }
+
             Gsm = new QcdmGsmManager(this);
             CallManager = new QcdmCallManager(this);
             Efs = new QcdmEfsManager(this);

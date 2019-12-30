@@ -11,6 +11,13 @@ namespace EfsTools
             set => base["port"] = value;
         }
 
+        [ConfigurationProperty("remote", DefaultValue = false, IsKey = true, IsRequired = false)]
+        public bool Remote
+        {
+            get => (bool)base["remote"];
+            set => base["remote"] = value;
+        }
+
         [ConfigurationProperty("baudrate", DefaultValue = 38400, IsKey = true, IsRequired = true)]
         public int Baudrate
         {
