@@ -278,5 +278,125 @@ namespace EfsTools.Items.Efs
             get => BitsUtils.GetBitAsBool(Value, 43);
             set => Value = BitsUtils.SetBitAsBool(Value, 43, value);
         }
+
+        public bool B45
+        {
+            get => BitsUtils.GetBitAsBool(Value, 44);
+            set => Value = BitsUtils.SetBitAsBool(Value, 44, value);
+        }
+
+        public bool B46
+        {
+            get => BitsUtils.GetBitAsBool(Value, 45);
+            set => Value = BitsUtils.SetBitAsBool(Value, 45, value);
+        }
+
+        public bool B47
+        {
+            get => BitsUtils.GetBitAsBool(Value, 46);
+            set => Value = BitsUtils.SetBitAsBool(Value, 46, value);
+        }
+
+        public bool B48
+        {
+            get => BitsUtils.GetBitAsBool(Value, 47);
+            set => Value = BitsUtils.SetBitAsBool(Value, 47, value);
+        }
+
+        public bool B49
+        {
+            get => BitsUtils.GetBitAsBool(Value, 48);
+            set => Value = BitsUtils.SetBitAsBool(Value, 48, value);
+        }
+
+        public bool B50
+        {
+            get => BitsUtils.GetBitAsBool(Value, 49);
+            set => Value = BitsUtils.SetBitAsBool(Value, 49, value);
+        }
+
+        public bool B51
+        {
+            get => BitsUtils.GetBitAsBool(Value, 50);
+            set => Value = BitsUtils.SetBitAsBool(Value, 50, value);
+        }
+
+        public bool B52
+        {
+            get => BitsUtils.GetBitAsBool(Value, 51);
+            set => Value = BitsUtils.SetBitAsBool(Value, 51, value);
+        }
+
+        public bool B53
+        {
+            get => BitsUtils.GetBitAsBool(Value, 52);
+            set => Value = BitsUtils.SetBitAsBool(Value, 52, value);
+        }
+
+        public bool B54
+        {
+            get => BitsUtils.GetBitAsBool(Value, 53);
+            set => Value = BitsUtils.SetBitAsBool(Value, 53, value);
+        }
+
+        public bool B55
+        {
+            get => BitsUtils.GetBitAsBool(Value, 54);
+            set => Value = BitsUtils.SetBitAsBool(Value, 54, value);
+        }
+
+        public bool B56
+        {
+            get => BitsUtils.GetBitAsBool(Value, 55);
+            set => Value = BitsUtils.SetBitAsBool(Value, 55, value);
+        }
+
+        public bool B57
+        {
+            get => BitsUtils.GetBitAsBool(Value, 56);
+            set => Value = BitsUtils.SetBitAsBool(Value, 56, value);
+        }
+
+        public bool B58
+        {
+            get => BitsUtils.GetBitAsBool(Value, 57);
+            set => Value = BitsUtils.SetBitAsBool(Value, 57, value);
+        }
+
+        public bool B59
+        {
+            get => BitsUtils.GetBitAsBool(Value, 58);
+            set => Value = BitsUtils.SetBitAsBool(Value, 58, value);
+        }
+
+        public bool B60
+        {
+            get => BitsUtils.GetBitAsBool(Value, 59);
+            set => Value = BitsUtils.SetBitAsBool(Value, 59, value);
+        }
+
+        public bool B61
+        {
+            get => BitsUtils.GetBitAsBool(Value, 60);
+            set => Value = BitsUtils.SetBitAsBool(Value, 60, value);
+        }
+
+        public bool B62
+        {
+            get => BitsUtils.GetBitAsBool(Value, 61);
+            set => Value = BitsUtils.SetBitAsBool(Value, 61, value);
+        }
+
+        public bool B63
+        {
+            get => BitsUtils.GetBitAsBool(Value, 62);
+            set => Value = BitsUtils.SetBitAsBool(Value, 62, value);
+        }
+
+        public bool B64
+        {
+            get => BitsUtils.GetBitAsBool(Value, 63);
+            set => Value = BitsUtils.SetBitAsBool(Value, 63, value);
+        }
     }
 }
