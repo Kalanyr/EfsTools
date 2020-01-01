@@ -15,21 +15,8 @@ namespace EfsTools.Qualcomm
             _port = new SerialPort(port, baudrate) {ReadTimeout = timeout};
         }
 
-        public override bool IsOpen
-        {
-            get
-            {
-                return _port.IsOpen;
-            }
-        }
-
-        public override string PortName
-        {
-            get
-            {
-                return _port.PortName;
-            }
-        }
+        public override bool IsOpen => _port.IsOpen;
+        public override string PortName => _port.PortName;
 
         public override void Dispose()
         {

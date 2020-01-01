@@ -22,21 +22,8 @@ namespace EfsTools.Qualcomm
             _listener.Start();
         }
 
-        public override bool IsOpen
-        {
-            get
-            {
-                return _port.Connected;
-            }
-        }
-
-        public override string PortName
-        {
-            get
-            {
-                return _portName;
-            }
-        }
+        public override bool IsOpen => _port.Connected;
+        public override string PortName => _portName;
 
         public override void Dispose()
         {
@@ -62,7 +49,7 @@ namespace EfsTools.Qualcomm
 
         public override void Write(byte[] data)
         {
-            var encoded = HdlcEncoder.Encode(data);
+            var encoded = HdlcEncoder.Encode(data, false);
             WriteRaw(encoded);
         }
 
