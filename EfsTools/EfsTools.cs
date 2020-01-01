@@ -360,6 +360,7 @@ namespace EfsTools
             }
 
             manager.Open();
+            manager.CheckHdlc();
             manager.SendPassword(_config.Password);
             manager.SendSpc(_config.Spc);
             manager.DisableLogs();

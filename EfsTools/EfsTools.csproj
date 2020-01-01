@@ -11208,6 +11208,7 @@
     <Compile Include="Qualcomm\QcdmCommands\Requests\Nv\NvReadCommandRequest.cs" />
     <Compile Include="Qualcomm\QcdmCommands\Requests\PasswordCommandRequest.cs" />
     <Compile Include="Qualcomm\QcdmCommands\Requests\SpcCommandRequest.cs" />
+    <Compile Include="Qualcomm\QcdmCommands\Requests\StatusCommandRequest.cs" />
     <Compile Include="Qualcomm\QcdmCommands\Responses\BaseSubSystemCommandResponse.cs" />
     <Compile Include="Qualcomm\QcdmCommands\Responses\BaseCommandResponse.cs" />
     <Compile Include="Qualcomm\QcdmCommands\Responses\DiagServ\GetLogAllocationCountResponse.cs" />
@@ -11242,6 +11243,7 @@
     <Compile Include="Qualcomm\QcdmCommands\Responses\Nv\NvReadCommandResponse.cs" />
     <Compile Include="Qualcomm\QcdmCommands\Responses\LogMaskCommandResponse.cs" />
     <Compile Include="Qualcomm\QcdmCommands\Responses\PasswordCommandResponse.cs" />
+    <Compile Include="Qualcomm\QcdmCommands\Responses\StatusCommandResponse.cs" />
     <Compile Include="Qualcomm\QcdmCommands\Responses\SpcCommandResponse.cs" />
     <Compile Include="Qualcomm\QcdmManagers\QcdmDiagServManager.cs" />
     <Compile Include="Qualcomm\QcdmManagers\QcdmEfsDirectory.cs" />

@@ -8,8 +8,6 @@ namespace EfsTools.Qualcomm
     {
         private readonly SerialPort _port;
 
-        private readonly byte[] _readBuffer = new byte[64 * 1024];
-
         public HdlcSerialLocal(string port, int baudrate, int timeout)
         {
             _port = new SerialPort(port, baudrate) {ReadTimeout = timeout};
@@ -33,27 +31,14 @@ namespace EfsTools.Qualcomm
             _port.Close();
         }
 
-        private void WriteRaw(byte[] data)
+        protected override void WriteRaw(byte[] data)
         {
             _port.Write(data, 0, data.Length);
         }
 
-        public override void Write(byte[] data)
-        {
-            var encoded = HdlcEncoder.Encode(data);
-            WriteRaw(encoded);
-        }
-
-        private int ReadRaw(byte[] buffer)
+        protected override int ReadRaw(byte[] buffer)
         {
             return _port.Read(buffer, 0, buffer.Length);
-        }
-
-        public override byte[] Read()
-        {
-            var read = ReadRaw(_readBuffer);
-            var decoded = HdlcEncoder.Decode(_readBuffer, read);
-            return decoded;
         }
     }
 }

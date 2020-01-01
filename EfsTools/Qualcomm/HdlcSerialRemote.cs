@@ -13,8 +13,6 @@ namespace EfsTools.Qualcomm
         private TcpClient _port;
         private NetworkStream _stream;
 
-        private readonly byte[] _readBuffer = new byte[64 * 1024];
-
         public HdlcSerialRemote(string port, int timeout)
         {
             _portName = port;
@@ -42,27 +40,14 @@ namespace EfsTools.Qualcomm
             _port.Close();
         }
 
-        private void WriteRaw(byte[] data)
+        protected override void WriteRaw(byte[] data)
         {
             _stream.Write(data, 0, data.Length);
         }
 
-        public override void Write(byte[] data)
-        {
-            var encoded = HdlcEncoder.Encode(data, false);
-            WriteRaw(encoded);
-        }
-
-        private int ReadRaw(byte[] buffer)
+        protected override int ReadRaw(byte[] buffer)
         {
             return _stream.Read(buffer, 0, buffer.Length);
-        }
-
-        public override byte[] Read()
-        {
-            var read = ReadRaw(_readBuffer);
-            var decoded = HdlcEncoder.Decode(_readBuffer, read);
-            return decoded;
         }
     }
 }
