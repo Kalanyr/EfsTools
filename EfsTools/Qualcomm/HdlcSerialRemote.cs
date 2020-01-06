@@ -15,6 +15,8 @@ namespace EfsTools.Qualcomm
 
         public HdlcSerialRemote(string port, int timeout)
         {
+            HdlcStart = false;
+
             _portName = port;
             _listener = new TcpListener(IPAddress.Any, Int32.Parse(port));
             _listener.Start();
