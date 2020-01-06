@@ -72,7 +72,10 @@ namespace EfsTools.Items
                     {
                         var val = property.GetValue(obj);
                         var buf = GetBytes(val, propType);
-                        stream.Write(buf, 0, buf.Length);
+                        if (buf != null)
+                        {
+                            stream.Write(buf, 0, buf.Length);
+                        }
                     }
                 }
             }
