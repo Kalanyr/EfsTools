@@ -4796,6 +4796,7 @@
     <Compile Include="Items\Efs\LteMinTxPowerDb10I.cs" />
     <Compile Include="Items\Efs\LtePartialB40ControlI.cs" />
     <Compile Include="Items\Efs\FreqList.cs" />
+    <Compile Include="Items\Efs\McfgAutoselectByUim.cs" />
     <Compile Include="Items\Efs\RatMask.cs" />
     <Compile Include="Items\Efs\SvcMode.cs" />
     <Compile Include="Items\Efs\UeMode.cs" />
