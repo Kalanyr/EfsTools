@@ -48,17 +48,17 @@ namespace EfsTools
                         .WithParsed<GetTaggetInfoOptions>(opts => tools.GetTargetInfo())
                         .WithParsed<GetEfsInfoOptions>(opts => tools.GetEfsInfo())
                         .WithParsed<EfsReadFileOptions>(opts =>
-                            tools.EfsReadFile(opts.InEfsFilePath, opts.OutComputerFilePath))
+                            tools.EfsReadFile(opts.InEfsFilePath, opts.OutComputerFilePath, opts.SubscriptionIndex))
                         .WithParsed<EfsWriteFileOptions>(opts => tools.EfsWriteFile(opts.InComputerFilePath,
                             opts.OutEfsFilePath, !opts.DontCreateEfsFile,
-                            opts.IsItemFile))
+                            opts.IsItemFile, opts.SubscriptionIndex))
                         .WithParsed<EfsRenameFileOptions>(opts =>
                             tools.EfsRenameFile(opts.EfsFilePath, opts.NewEfsFilePath))
                         .WithParsed<EfsDowloadDirectoryOptions>(opts =>
                             tools.EfsDownloadDirectory(opts.InEfsPath, opts.OutComputerPath, opts.NoExtraData,
-                                opts.ProcessNvItems))
+                                opts.ProcessNvItems, opts.SubscriptionIndex))
                         .WithParsed<EfsUploadDirectoryOptions>(opts => tools.EfsUploadDirectory(opts.InComputerPath,
-                            opts.OutEfsPath, opts.CreateItemFilesAsDefault, opts.ProcessNvItems))
+                            opts.OutEfsPath, opts.CreateItemFilesAsDefault, opts.ProcessNvItems, opts.SubscriptionIndex))
                         .WithParsed<EfsFixFileNamesOptions>(opts => tools.EfsFixFileNames(opts.EfsPath))
                         .WithParsed<EfsCreateDirectoryOptions>(opts =>
                             tools.EfsCreateDirectory(opts.Path, !opts.NoRecursive))

@@ -20,5 +20,8 @@ namespace EfsTools.CommandLineOptions
         }
 
         private Layout _outComputerFilePathLayout;
+
+        [Option('s', "subscriptionIndex", Required = false, HelpText = "Subscription index. 0 - first SIM, 1 - second SIM", Default = 0)]
+        public int SubscriptionIndex { get; set; }
     }
 }
