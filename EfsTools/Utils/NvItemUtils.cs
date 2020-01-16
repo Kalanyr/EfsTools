@@ -32,7 +32,7 @@ namespace EfsTools.Utils
             var items = new Dictionary<string, object>();
             foreach (var filePath in ItemsFactory.SupportedEfsFilePaths)
             {
-                var realFilePath = GetEfsFilePath(filePath, subscription);
+                var realFilePath = PathUtils.GetEfsFilePath(filePath, subscription);
                 var item = ItemsFactory.CreateEfsFile(filePath);
                 var itemType = item.GetType();
                 if (configItems == null || configItems.Contains(itemType.Name))
@@ -76,7 +76,7 @@ namespace EfsTools.Utils
             var items = new Dictionary<string, object>();
             foreach (var filePath in ItemsFactory.SupportedEfsFilePaths)
             {
-                var realFilePath = GetEfsFilePath(filePath, subscription);
+                var realFilePath = PathUtils.GetEfsFilePath(filePath, subscription);
                 if (manager.Efs.FileExists(realFilePath))
                 {
                     var item = ItemsFactory.CreateEfsFile(filePath);
@@ -107,16 +107,6 @@ namespace EfsTools.Utils
             return items;
         }
 
-        private static string GetEfsFilePath(string filePath, int subscription)
-        {
-            if (ItemsFactory.HasSubscription(filePath))
-            {
-                var subscriptionFilePath = (subscription <= 0) ? filePath : $"{filePath}_Subscription{subscription:D2}";
-                return subscriptionFilePath;
-            }
-            return filePath;
-        }
-
         public static void PhoneSaveItems(QcdmManager manager, int subscription, Dictionary<string, object> items, Logger logger)
         {
             var efs = manager.Efs;
@@ -139,7 +129,7 @@ namespace EfsTools.Utils
                 }
                 else
                 {
-                    var path = GetEfsFilePath(fileAttribute.Path, subscription);
+                    var path = PathUtils.GetEfsFilePath(fileAttribute.Path, subscription);
                     if (efs.FileExists(path))
                     {
                         efs.DeleteFile(path);
@@ -277,7 +267,7 @@ namespace EfsTools.Utils
                 }
                 else
                 {
-                    var filePath = GetEfsFilePath(fileAttribute.Path, subscription);
+                    var filePath = PathUtils.GetEfsFilePath(fileAttribute.Path, subscription);
                     var entryType = fileAttribute.IsItemFile ? DirectoryEntryType.ItemFile : DirectoryEntryType.File;
                     var path = PathUtils.BuildPath(directoryPath, filePath, fileAttribute.Permissions, entryType,
                         false);
