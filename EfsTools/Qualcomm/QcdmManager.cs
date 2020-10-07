@@ -431,7 +431,27 @@ namespace EfsTools.Qualcomm
             }
             return new Tuple<LogId, LogId>[0];
         }
-        
+
+        public void CheckHdlc()
+        {
+            try
+            {
+                if (IsOpen)
+                {
+                    _port.HdlcStart = true;
+                    var request = new StatusCommandRequest();
+                    ExecuteQcdmCommandRequest(request);
+                }
+            } catch (QcdmManagerException e)
+            {
+                // Bad command here most likely means we shouldn't send hdlc at the start of the frame
+                if (e.Message == Strings.QcdmCommandBadCmd)
+                {
+                    _port.HdlcStart = false;
+                }
+            }
+        }
+
         public void SendSpc(string spc)
         {
             if (IsOpen)
